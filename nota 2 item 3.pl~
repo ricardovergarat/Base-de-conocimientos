@@ -30,7 +30,7 @@ invertir(LI,LP,LF) :- (LP == [], nada(LI,LF),!)
                       el_pop(LP,LPT),
                       invertir(LT,LPT,LF).
 
-error(I,NP) :- (I > NP; I =< -1),write('\nEse incide no existe').
+error(I,NP) :- (I >= NP; I =< -1),write('\nEse incide no existe').
 
 mostrar(I,C,L) :- C == I, top(L,T),write('\n'),display(T),!
                                      ;

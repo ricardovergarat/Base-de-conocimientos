@@ -1,18 +1,20 @@
 % intentar resolver la conjetura de collatz
 
 resto(X,R) :-  Y  is mod(X,2), Y == 0, R is 0,
-                write('\nentro: '), display(X),
-                write('\nsu resto es: '), display(R)
+                write('\nentro: '), display(X)
                 ;
-                R is 1,write('\nentro: '), display(X),
-                write('\nsu resto es: '), display(R).
+                R is 1,write('\nentro: '), display(X).
 
 % Dependiendo del resto (R) se realiza la operacion al numero "E" y se
 % guarda en "S"
 
 cambiar_numero(E,R,S) :-( R == 0, S is E / 2 );( R == 1, S is E * 3 + 1 ).
 
-% nuestro caso base es si El numero "N" es 1 sino repetimos el mismo
-% proceso hasta que sea 1
+% nuestro caso base es el 1 sino repetimos el mismo proceso hasta que
+% sea 1
 
 collatz(N) :- N == 1;( resto(N,R), cambiar_numero(N,R,S), collatz(S)).
+
+
+
+

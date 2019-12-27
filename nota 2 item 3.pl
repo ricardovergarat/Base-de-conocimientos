@@ -10,7 +10,7 @@ resto(A,B,C) :- C is mod(A,B).
 nada(LI,LI).
 inicializar(X,A,Y,B) :- X is A, Y is B.
 
-actualizar(LI,D,N,C,NC,LF) :- D == 1,el_push(N,LI,LF),sucesor(C,C1),NC is C1,!                                                   ;
+actualizar(LI,D,N,C,NC,LF) :- D == 1,el_push(N,LI,LF),sucesor(C,C1),NC is C1,!;
                               D == 0,nada(LI,LF),NC is C + 0 .
 
 regresiva(O,N,D) :-  N == 1, D is 1,! ;resto(O,N,R),
